@@ -7,6 +7,8 @@ package com.O3505.Easy_Parking.Servicios;
 import com.O3505.Easy_Parking.Dao.RegistroDao;
 import com.O3505.Easy_Parking.Modelos.Registro;
 import java.util.List;
+
+import com.O3505.Easy_Parking.Modelos.Registro;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,9 +30,33 @@ public class ServicioRegistro {
         return registroDao.findAll();
         
     }
-            
-    
-    
-    
-    
+
+    public Registro insertar (Registro nuevoRegistro){
+        return registroDao.save(nuevoRegistro);
+
+    }
+
+    public Registro actualizar (Registro actualizarRegistro){
+        return registroDao.save(actualizarRegistro);
+
+    }
+
+
+
+    public void eleminarTipoVehiculo (Integer idRegistro){
+        registroDao.delete(registroDao.findById(idRegistro).get());
+
+    }
+
+    public Registro buscarId (int idRegistro){
+        return registroDao.findById(idRegistro).get();
+
+
+    }
+
+
+
+
+
+
 }

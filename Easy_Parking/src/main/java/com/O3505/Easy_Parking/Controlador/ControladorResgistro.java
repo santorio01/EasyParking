@@ -8,10 +8,7 @@ import com.O3505.Easy_Parking.Modelos.Registro;
 import com.O3505.Easy_Parking.Servicios.ServicioRegistro;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  *
@@ -30,6 +27,36 @@ public class ControladorResgistro {
     public List<Registro> consultarRegistro(){
         return servicioRegistro.listarTodo();
         
+    }
+
+    @PostMapping
+    public Registro insertar(@RequestBody Registro RegistroNuevo){
+
+        return servicioRegistro.insertar(RegistroNuevo);
+
+    }
+
+
+    @PutMapping
+    public Registro actualizar (@RequestBody Registro RegistroModificar){
+
+        return servicioRegistro.actualizar(RegistroModificar);
+    }
+
+
+
+    //@CrossOrigin(origins = "http://localhost:8080")
+    @DeleteMapping(value = "/delete/{idregistro}")
+    public String eliminarRegistro(@PathVariable("idregistro") Integer idregistro ){
+        servicioRegistro.eleminarTipoVehiculo(idregistro);
+        return "eliminacion exitosa";
+    }
+
+
+    @GetMapping
+    public Registro buscarId (Integer Registro){
+        return servicioRegistro.buscarId(Registro);
+
     }
             
             

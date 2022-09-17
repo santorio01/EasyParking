@@ -4,11 +4,13 @@
  */
 package com.O3505.Easy_Parking.Controlador;
 
+import com.O3505.Easy_Parking.Dao.TipoVehiculoDao;
 import com.O3505.Easy_Parking.Modelos.Tipo_Vehiculo;
 import com.O3505.Easy_Parking.Servicios.ServicioTipoVehiculo;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
 
 /**
  *
@@ -47,12 +49,16 @@ public class ControladorTipoVehiuclo {
     
     //@CrossOrigin(origins = "http://localhost:8080")
     @DeleteMapping(value = "/delete/{idtipoVehiculo}")
-    public String eliminarIdPlazaDisponbible(@PathVariable("idtipoVehiculo") Integer idtipoVehiculo ){
+    public String eliminarIdtipoVehiculo(@PathVariable("idtipoVehiculo") Integer idtipoVehiculo ){
         servicioTipoVehiculo.eleminarTipoVehiculo(idtipoVehiculo);
         return "eliminacion exitosa";
     }
 
 
+    @GetMapping
+    public Tipo_Vehiculo buscarId (Integer idTipoVehiculo){
+        return servicioTipoVehiculo.buscarId(idTipoVehiculo);
 
+    }
 
 }

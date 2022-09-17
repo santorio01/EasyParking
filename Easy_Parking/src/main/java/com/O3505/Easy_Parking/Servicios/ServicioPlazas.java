@@ -7,6 +7,8 @@ package com.O3505.Easy_Parking.Servicios;
 import com.O3505.Easy_Parking.Dao.PlazasDao;
 import com.O3505.Easy_Parking.Modelos.Plazas;
 import java.util.List;
+
+import com.O3505.Easy_Parking.Modelos.Tipo_Vehiculo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,25 +22,36 @@ public class ServicioPlazas {
 
     @Autowired
     private PlazasDao plazasDao;
-    
-    
-    
-    public Plazas guardarPlaza (Plazas nuevoPlazas){
-      
-        return plazasDao.save(nuevoPlazas);
- 
+
+
+
+    public Plazas insertar (Plazas plazasNuevo){
+        return plazasDao.save(plazasNuevo);
+
     }
 
-    public List<Plazas> ListarTodo() {
+    public Plazas actualizar (Plazas actualizarPlazas){
+        return plazasDao.save(actualizarPlazas);
 
+    }
+
+
+    public List<Plazas> listarPlazas(){
         return plazasDao.findAll();
 
+    }
+
+
+    public void eleminarPlazas (Integer idPlazas){
+        plazasDao.delete(plazasDao.findById(idPlazas).get());
 
     }
-    
-    public Plazas actualizarPlaza (Plazas actualizarPlaza){
-    
-    return  plazasDao.save(actualizarPlaza);
+
+    public Plazas buscarId (int idPlazas){
+        return plazasDao.findById(idPlazas).get();
+
     }
+
+
 
 }

@@ -12,12 +12,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @author Santorio
  */
 public interface TipoVehiculoDao extends JpaRepository<Tipo_Vehiculo, Integer>{
-    
-    
-    
-    
-    
-    
-    
+
     
 }

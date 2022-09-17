@@ -42,6 +42,11 @@ public class ServicioTipoVehiculo {
         tipoVehiculoDao.delete(tipoVehiculoDao.findById(idTipoVehiculo).get());
               
     }
+
+    public Tipo_Vehiculo buscarId (int idTipoVehiculo){
+        return tipoVehiculoDao.findById(idTipoVehiculo).get();
+
+    }
     
     
     
