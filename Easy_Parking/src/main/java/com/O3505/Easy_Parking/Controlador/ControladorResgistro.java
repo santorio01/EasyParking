@@ -23,7 +23,7 @@ public class ControladorResgistro {
     @Autowired
     private ServicioRegistro servicioRegistro;
     
-    @GetMapping
+    @GetMapping("/listaregistros")
     public List<Registro> consultarRegistro(){
         return servicioRegistro.listarTodo();
         
@@ -57,6 +57,12 @@ public class ControladorResgistro {
     public Registro buscarId (Integer Registro){
         return servicioRegistro.buscarId(Registro);
 
+    }
+    
+    @GetMapping("/buscarvehiculo") 
+    public List<Registro> buscarPlaca (@RequestParam String placa){
+    return servicioRegistro.buscarPlaca(placa);
+        
     }
             
             

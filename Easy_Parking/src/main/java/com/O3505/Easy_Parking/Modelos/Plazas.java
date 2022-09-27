@@ -26,50 +26,50 @@ public class Plazas implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idplazas")
-    private String idplazas;
+    private Integer idplazas;
 
     @Column(name = "plazas_disponibles")
-    private String Plazas_Disponibles;
+    private Integer Plazas_Disponibles;
 
     @Column(name = "plazas_ocupadas")
-    private String plazas_ocupadas;
+    private Integer plazas_ocupadas;
 
     @Column(name = "total_de_plazas")
-    private String total_de_plazas;
+    private Integer total_de_plazas;
 
     @OneToOne
     @JoinColumn(name = "tipo_de_vehiculo_idtipo_de_vehiculo")
     private Tipo_Vehiculo tipo_vehiculo;
 
-    public String getIdplazas() {
+    public Integer getIdplazas() {
         return idplazas;
     }
 
-    public void setIdplazas(String idplazas) {
+    public void setIdplazas(Integer idplazas) {
         this.idplazas = idplazas;
     }
 
-    public String getPlazas_Disponibles() {
+    public Integer getPlazas_Disponibles() {
         return Plazas_Disponibles;
     }
 
-    public void setPlazas_Disponibles(String Plazas_Disponibles) {
+    public void setPlazas_Disponibles(Integer Plazas_Disponibles) {
         this.Plazas_Disponibles = Plazas_Disponibles;
     }
 
-    public String getPlazas_ocupadas() {
+    public Integer getPlazas_ocupadas() {
         return plazas_ocupadas;
     }
 
-    public void setPlazas_ocupadas(String plazas_ocupadas) {
+    public void setPlazas_ocupadas(Integer plazas_ocupadas) {
         this.plazas_ocupadas = plazas_ocupadas;
     }
 
-    public String getTotal_de_plazas() {
+    public Integer getTotal_de_plazas() {
         return total_de_plazas;
     }
 
-    public void setTotal_de_plazas(String total_de_plazas) {
+    public void setTotal_de_plazas(Integer total_de_plazas) {
         this.total_de_plazas = total_de_plazas;
     }
 
@@ -80,6 +80,8 @@ public class Plazas implements Serializable {
     public void setTipo_vehiculo(Tipo_Vehiculo tipo_vehiculo) {
         this.tipo_vehiculo = tipo_vehiculo;
     }
+
+   
 
     
 }

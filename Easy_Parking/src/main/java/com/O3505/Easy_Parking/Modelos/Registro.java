@@ -6,6 +6,7 @@ package com.O3505.Easy_Parking.Modelos;
 
 import java.io.Serializable;
 import java.text.DateFormat;
+import java.time.LocalDateTime;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -35,19 +36,19 @@ public class Registro implements Serializable {
     @Column(name="placa")
     private String placa;
     
-    @Column(name="hora_ingreso")
-    private DateFormat hora_ingreso;
+    @Column(name="hora_ingreso", columnDefinition = "TIMESTAMP")
+    private LocalDateTime hora_ingreso;
     
-    @Column(name="hora_salida")
-    private DateFormat hora_salida;
+    @Column(name="hora_salida", columnDefinition = "TIMESTAMP")
+    private LocalDateTime hora_salida;
     
     
     @ManyToOne
     @JoinColumn(name= "tipo_de_vehiculo_idtipo_de_vehiculo")
     private Tipo_Vehiculo tipo_Vehiculo;
     
-    @Column (name="fechafactura")
-    private DateFormat fechafactura;
+    @Column (name="fechafactura", columnDefinition = "TIMESTAMP")
+    private LocalDateTime fechafactura;
     
     @Column (name= "valorfactura")
     private Double valorfactura; 
@@ -68,19 +69,19 @@ public class Registro implements Serializable {
         this.placa = placa;
     }
 
-    public DateFormat getHora_ingreso() {
+    public LocalDateTime getHora_ingreso() {
         return hora_ingreso;
     }
 
-    public void setHora_ingreso(DateFormat hora_ingreso) {
+    public void setHora_ingreso(LocalDateTime hora_ingreso) {
         this.hora_ingreso = hora_ingreso;
     }
 
-    public DateFormat getHora_salida() {
+    public LocalDateTime getHora_salida() {
         return hora_salida;
     }
 
-    public void setHora_salida(DateFormat hora_salida) {
+    public void setHora_salida(LocalDateTime hora_salida) {
         this.hora_salida = hora_salida;
     }
 
@@ -92,11 +93,11 @@ public class Registro implements Serializable {
         this.tipo_Vehiculo = tipo_Vehiculo;
     }
 
-    public DateFormat getFechafactura() {
+    public LocalDateTime getFechafactura() {
         return fechafactura;
     }
 
-    public void setFechafactura(DateFormat fechafactura) {
+    public void setFechafactura(LocalDateTime fechafactura) {
         this.fechafactura = fechafactura;
     }
 
@@ -107,7 +108,6 @@ public class Registro implements Serializable {
     public void setValorfactura(Double valorfactura) {
         this.valorfactura = valorfactura;
     }
-    
 
    
     

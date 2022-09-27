@@ -56,7 +56,7 @@ public class ControladorTipoVehiuclo {
 
 
     @GetMapping
-    public Tipo_Vehiculo buscarId (Integer idTipoVehiculo){
+        public Tipo_Vehiculo buscarId (Integer idTipoVehiculo){
         return servicioTipoVehiculo.buscarId(idTipoVehiculo);
 
     }

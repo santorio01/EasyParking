@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EASY PARKING</title>
+        
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <style>
+            .cabecera{
+                padding-top: 20px;
+                padding-bottom: 20px;
+                text-align: center;
+            }
+
+            .esp{
+                padding-top: 30px;
+            }
+            .cent{
+                text-align: center;
+            }
+
+            .color button{
+                background-color: #711bc2e2;
+            }
+            .color1 button{
+                background-color: #11826be2;
+            }
+
+        </style>
+
+        <script>
+
+            function myFunction() {
+                var today = new Date(); 
+                var now = today.toLocaleString();
+                document.getElementById("fsal").value = now;
+            }
+           
+        </script>
+    </head>
+  <body>
+    
+    <div class="container">
+        <div class="cabecera">
+            <h1>EASY PARKING</h1>
+                <h6>Configuración del sistema</h6>
+        </div>
+
+        <div  class="d-grid gap-2 col-4 mx-auto color cent ">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                      <th scope="col">Tipo Vehiculo</th>
+                      <th scope="col">Modificar</th>
+                      <th scope="col">Eliminar</th>
+                    </tr>
+                  </thead>
+    
+                  <tbody>
+                    <tr>
+                      <th scope="row">Automovil</th>
+                      <td>*</td>
+                      <td>x</td>
+                      
+                    </tr>
+    
+                    <tr>
+                        <th scope="row">Moto</th>
+                        <td>*</td>
+                        <td>x</td>
+                        
+                      </tr>
+    
+                      <tr>
+                        <th scope="row">Bicileta</th>
+                        <td>*</td>
+                        <td>x</td>
+                        
+                      </tr>
+                  </tbody>
+              </table>
+
+        </div>
+       
+          
+            <div class=" gap-2 col-4 mx-auto">
+                <button class="btn btn-primary" type="button"onclick="location.href='index.html';">Regresar</button>
+            </div>
+           
+          
+
+        <footer class="my-5 pt-5 text-muted text-center text-small">
+            <p class="mb-1">&copy; 2022 EASY PARKING</p>
+            <ul class="list-inline">
+              <li class="list-inline-item"><a href="#">Contacto</a></li>
+              
+            </ul>
+          </footer>
+
+    </div>
+
+
+
+    
+
+      <script src="js/bootstrap.js"></script>
+  </body>
+
+ 
+</html>

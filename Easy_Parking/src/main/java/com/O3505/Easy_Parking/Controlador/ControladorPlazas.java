@@ -22,7 +22,7 @@ public class ControladorPlazas {
     @Autowired
     private ServicioPlazas servicioPlazas;
 
-    @GetMapping("/listarplazas")
+    @GetMapping("/listarplaza")
     public List<Plazas> consultarTodo() {
 
         return servicioPlazas.listarPlazas();
@@ -30,33 +30,29 @@ public class ControladorPlazas {
     }
 
     @PostMapping
-    public Plazas insertar(@RequestBody Plazas plazasNuevo){
+    public Plazas insertar(@RequestBody Plazas plazasNuevo) {
 
         return servicioPlazas.insertar(plazasNuevo);
 
     }
 
-
     @PutMapping
-    public Plazas actualizar (@RequestBody Plazas plazasModificar){
+    public Plazas actualizar(@RequestBody Plazas plazasModificar) {
 
         return servicioPlazas.actualizar(plazasModificar);
     }
 
-
-
     //@CrossOrigin(origins = "http://localhost:8080")
     @DeleteMapping(value = "/delete/{idplazas}")
-    public String eliminarIdPlazas(@PathVariable("idplazas") Integer idplazas ){
+    public String eliminarIdPlazas(@PathVariable("idplazas") Integer idplazas) {
         servicioPlazas.eleminarPlazas(idplazas);
         return "eliminacion exitosa";
     }
 
-
-    @GetMapping
-    public Plazas buscarId (Integer idPlazas){
-        return servicioPlazas.buscarId(idPlazas);
+    @GetMapping("/{idplazas}")
+    public Plazas buscarId(@PathVariable("idplazas") Integer idplazas) {
+        return servicioPlazas.buscarId(idplazas);
 
     }
-    
+
 }

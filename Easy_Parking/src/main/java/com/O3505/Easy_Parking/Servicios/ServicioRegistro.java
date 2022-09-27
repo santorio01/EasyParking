@@ -7,10 +7,9 @@ package com.O3505.Easy_Parking.Servicios;
 import com.O3505.Easy_Parking.Dao.RegistroDao;
 import com.O3505.Easy_Parking.Modelos.Registro;
 import java.util.List;
-
-import com.O3505.Easy_Parking.Modelos.Registro;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  *
@@ -54,7 +53,10 @@ public class ServicioRegistro {
 
     }
 
-
+    
+    public List<Registro>  buscarPlaca (String placa){  
+    return  registroDao.searchByplaca(placa);
+    }
 
 
 

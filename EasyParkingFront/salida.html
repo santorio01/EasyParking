@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EASY PARKING</title>
+        
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <style>
+            .cabecera{
+                padding-top: 20px;
+                padding-bottom: 20px;
+                text-align: center;
+            }
+
+            .esp{
+                padding-top: 30px;
+            }
+
+            .color button{
+                background-color: #711bc2e2;
+            }
+            .color1 button{
+                background-color: #11826be2;
+            }
+
+        </style>
+
+        <script>
+
+            function myFunction() {
+                var today = new Date(); 
+                var now = today.toISOString();
+                document.getElementById("fechasalida").value = now;
+            }
+           
+        </script>
+             <script src="js/peticiones/acciones.js" type="text/javascript"></script>
+             <script src="js/peticiones/registro.js" type="text/javascript"></script>
+    </head>
+  <body onload="mostrarRegistro()" onload="guardarSalida()">
+    
+    <div class="container">
+        <div class="cabecera">
+            <h1>EASY PARKING</h1>
+           
+            <h6>Registro de Salida</h6>
+
+        </div>
+
+        
+        
+        <div class="d-grid gap-2 col-4 mx-auto esp">
+           
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" onkeyup="mostrarRegistro()" id="bplaca" placeholder="Buscar Vehiculo">
+                <label for="bplaca">Buscar Vehiculo</label>
+              </div>
+
+              
+         
+
+        </div>
+          
+            
+
+        <div class="d-grid gap-2 col-4 mx-auto ">
+
+            <div class="form-floating mb-3">
+               <input type="text" class="form-control" id="idregistro" placeholder="Id de ingreso" value="">
+               <label for="idregistro">Numero de ingreso</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="datetime" class="form-control" id="regfecha" placeholder="hora Entrada" value="5:30 Am">
+                <label for="regfecha">Hora de entrada</label>
+              </div>
+
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="regtipovehiculo" placeholder="Tipo Vehiculo" value="Automovil">
+                <label for="regentrada">Tipo Vehiculo</label>
+              </div>
+
+              
+              <div class="form-floating mb-3">
+              <input type="datetime" class="form-control" id="fechasalida" placeholder="hora Entrada" value="" onfocus="myFunction()">
+              <label for="fechasalida">Hora de Salida</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="vlrfactura" placeholder="Valor Factura" value="">
+              <label for="vlrfactura">Valor a pagar</label>
+           </div>
+
+        </div>
+
+        
+    
+        <div class="d-grid gap-2 col-4 mx-auto color1">
+            
+            <button class="btn btn-primary" type="button" onclick="guardarSalida()">GUARDAR</button>
+          </div>
+
+          <div class="d-grid gap-2 col-4 mx-auto color esp">
+            
+            <button class="btn btn-primary" type="button"onclick="location.href='index.html';">Regresar</button>
+          </div>
+
+        <footer class="my-5 pt-5 text-muted text-center text-small">
+            <p class="mb-1">&copy; 2022 EASY PARKING</p>
+            <ul class="list-inline">
+              <li class="list-inline-item"><a href="#">Contacto</a></li>
+              
+            </ul>
+          </footer>
+
+    </div>
+
+
+
+    
+
+      <script src="js/bootstrap.js"></script>
+  </body>
+
+ 
+</html>
